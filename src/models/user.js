@@ -4,7 +4,8 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 
-var secret
+var secret = ''
+
 if(process.env.NODE_ENV === 'production'){
     secret = process.env.SECRET
 } else{
