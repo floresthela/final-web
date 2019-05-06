@@ -27,7 +27,7 @@ const createTodo = function(req, res){
   const todo = new Todo({
     createdBy: req.user._id,
     description: req.body.description,
-    //completed: false
+    completed: false
   })
   todo.save().then(function() {
     return res.send(todo)
