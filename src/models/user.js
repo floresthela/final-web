@@ -2,12 +2,13 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const Config = require('../config')
+
 
 var secret
 if(process.env.NODE_ENV === 'production'){
     secret = process.env.SECRET
 } else{
+  const Config = require('../config')
   secret = Config.secret
 }
 
