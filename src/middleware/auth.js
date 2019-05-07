@@ -5,12 +5,11 @@ const User = require('../models/user')
 
 var secret = ''
 
-if(process.env.NODE_ENV != 'production'){
-  const Config = require('../config')
-  secret = Config.secret  
-  
+if(process.env.NODE_ENV === 'production'){
+    secret = process.env.SECRET
 } else{
-  secret = process.env.SECRET
+  const Config = require('../config')
+  secret = Config.secret
 }
 
 
